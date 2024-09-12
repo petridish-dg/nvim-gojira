@@ -1,17 +1,33 @@
 return {
-  -- "nvimdev/dashboard-nvim",
-  -- lazy = false,
-  -- opts = function()
-  --   local logo = [[
-  --
-  --
-  --   ]]
-  --   logo = string.rep("\n", 8) .. logo .. "\n\n"
-  --
-  --   local opts = {
-  --     theme = "hyper",
-  --   }
-  --
-  --   return opts
-  -- end,
+  "nvimdev/dashboard-nvim",
+  lazy = false,
+  opts = function()
+    local logo = [[
+  ██████╗ ███████╗████████╗███████╗██████╗    ██████╗  ██████╗ 
+  ██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗   ██╔══██╗██╔════╝ 
+  ██║  ██║██║        ██║   ██║     ██║  ██║   ██║  ██║██║      
+  ██║  ██║██║        ██║   ██║     ██║  ██║   ██║  ██║██║      
+  ██████╔╝█████╗     ██║   █████╗  ██████╔╝   ██║  ██║██║  ███╗
+  ██╔═══╝ ██╔══╝     ██║   ██╔══╝  ██╔══██╗   ██║  ██║██║   ██║
+  ██║     ███████╗   ██║   ███████╗██║  ██║██╗██████╔╝╚██████╔╝
+  ╚═╝     ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝╚═════╝  ╚═════╝ 
+    ]]
+
+    logo = string.rep("\n", 8) .. logo .. "\n\n"
+
+    local opts = {
+      theme = "hyper",
+      hide = {
+        statusline = false,
+      },
+      config = {
+        header = vim.split(logo, "\n"),
+        shortcut = {
+          { desc = "[ @github/petridish-dg ]" },
+        },
+      },
+    }
+
+    return opts
+  end,
 }
